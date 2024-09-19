@@ -1,0 +1,89 @@
+{% extends 'master.html' %}
+            
+
+
+
+            {%  block content %}
+                        <!-- templates/categories.html -->
+
+                        <div class="container mt-5">
+                            <h1 class="text-center mb-4">Product Categories</h1>
+                            <div class="row">
+                                <!-- Category 1 -->
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img src="https://img.drz.lazcdn.com/static/np/p/104ad777c741805f78ba454daf427c93.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="Electronics">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Electronics</h5>
+                                            <p class="card-text">Browse through the latest electronic devices and gadgets.</p>
+                                            <a href="{% url 'product' %}" class="btn btn-primary">Explore Electronics</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Category 2 -->
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img src="https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLm5wL3AvM2NlOGU2ZDgyMThkN2U1YmI1ZjM3YzM4NTNmNzhjM2MuanBn_400x400q75.png_.webp" class="card-img-top" alt="Fashion">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Fashion</h5>
+                                            <p class="card-text">Check out the latest fashion trends and styles.</p>
+                                            <a href="{% url 'product' %}" class="btn btn-primary">Shop Fashion</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Category 3 -->
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img src="https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLm5wL3AvYjg0YzAzOGQ3MmEzMDVhYTZmMTJiYzlmOWM1NDBjODUuanBn_400x400q75.png_.webp" class="card-img-top" alt="Home Appliances">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Home Appliances</h5>
+                                            <p class="card-text">Upgrade your home with new appliances with better look.</p>
+                                            <a href="{% url 'product' %}" class="btn btn-primary">Explore Appliances</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="row">
+                                <!-- Category 4 -->
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img src="https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLm5wL3AvNDNhMDk4ZTg4ZGU1ZWRkZDg4MDE2Y2E2MzA2NTU3YzYuanBn_400x400q75.png_.webp" class="card-img-top" alt="Sports">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sports</h5>
+                                            <p class="card-text">Find gear for all your favorite sports activities with best quality</p>
+                                            <a href="{% url 'product' %}" class="btn btn-primary">Shop Sports</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Category 5 -->
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img src="https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLm5wL3AvZGM3YjZjOGQ5OWEwNmI0YjJmMDM1NDI1YTlhMDcwYmYuanBn_400x400q75.png_.webp" class="card-img-top" alt="Beauty Products">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauty Products</h5>
+                                            <p class="card-text">Explore a wide range of beauty and skincare products.</p>
+                                            <a href="{% url 'product' %}" class="btn btn-primary">Shop Beauty</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Category 6 -->
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img src="https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9ucC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzYwNTg2MGVjMTViYzQ5MWRiMGE4YzFiN2RlNTIyOGM2ai5qcGc=_400x400q75.png_.webp" class="card-img-top" alt="Toys">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Toys & Baby Products</h5>
+                                            <p class="card-text">Find toys and baby products for your little ones.</p>
+                                            <a href="{% url 'product' %}" class="btn btn-primary">Shop Toys</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            {% endblock %}
+
+
