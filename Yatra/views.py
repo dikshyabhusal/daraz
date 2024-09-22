@@ -2,24 +2,24 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def landingpage(request):
-    return render(request,"home.html")
-    return HttpResponse(html)
+    data ={'title':"Daraz home page"}
+    return render(request,"home.html",data)
+    
 
 def about(request):
-    return render(request,"about.html")
-    return HttpResponse(html)
-
-def product(request):
-    return render(request,"product.html")
-    return HttpResponse(html)
+    data ={'title':"Daraz About page"}
+    return render(request,"about.html",data)
+    
 
 def categories(request):
-    return render(request,"categories.html")
-    return HttpResponse(html)
+    data ={'title':"Daraz categories page"}
+    return render(request,"categories.html",data)
+    
 
 def contact(request):
-    return render(request,"contact.html")
-    return HttpResponse(html)
+    data ={'title':"Daraz contact page"}
+    return render(request,"contact.html",data)
+    
 
 
 
