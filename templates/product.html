@@ -1,178 +1,23 @@
 {% extends 'master.html' %}
 {%  block content %}
 <div class="container text-center">
-
     <div class="row">
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/g/kf/S03892153eb5e476b866eb5a73560cb60D.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        {% for prod in Product %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ prod.image.url }}" class="card-img-top" alt="{{ prod.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{prod.name}} ({{prod.price}})</h5>
+                        <p class="card-text">{{ prod.description }}</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
                     </div>
                 </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/g/kf/S3e68487789204c40a33a7d3fd0f25f7aP.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/g/kf/S93a9f94f8d7c45e29280211d081eef84G.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-        </div>
-        </div>
+            </div>
+        {% endfor %}
     </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/ca4600cf7ed780e201691ccc6520ef15.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/3ae2fc120c1268275b4cf7ea9c9b98aa.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/69b8c19794729813329441e242bbdc57.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/g/kf/Scfbf3170bec3495ca75c37a61a918894x.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/a20053ecf0b86f4f690dc051062595a0.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/a1acff8c1a804adc56867bbe218fe459.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/g/kf/S0d4c028bd4c04135b41887b5a3264b39N.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/4d04c8aea7e072778cc2497eac59f112.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/g/kf/Sf402b86b13c74f7a98a680fdc4423e2ad.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://static-01.daraz.com.np/p/fbed2d46a26c8d2ec64858c4f24e7dd3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://static-01.daraz.com.np/p/3c32304736461759e006fb08df048aa8.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                <img src="https://static-01.daraz.com.np/p/619d0828f873ef29b50a7ef5674757d5.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
     
-        {% endblock %}
+{% endblock %}
 
 
 

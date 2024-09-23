@@ -10,33 +10,18 @@
             </div>
             <!-- Team Members Section -->
             <div class="row text-center">
+                {% for abou in About %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://as2.ftcdn.net/v2/jpg/00/98/57/51/1000_F_98575131_cMXZlCZQTyiFHac755WQgu4ndEnyQzZt.jpg" class="card-img-top" alt="Team Member 1">
+                        <img src="{{ abou.image.url}}" class="card-img-top" alt="{{ abou.name }}">
                         <div class="card-body">
-                            <h5 class="card-title">Dikshya Bhusal</h5>
-                            <p class="card-text">CEO & Founder</p>
+                            <h5 class="card-title">{{ abou.name }}</h5>
+                            <p class="card-text">{{ abou.description }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://as2.ftcdn.net/v2/jpg/00/98/57/51/1000_F_98575131_cMXZlCZQTyiFHac755WQgu4ndEnyQzZt.jpg" class="card-img-top" alt="Team Member 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Diya Bhusal</h5>
-                            <p class="card-text">Chief Marketing Officer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://as2.ftcdn.net/v2/jpg/00/98/57/51/1000_F_98575131_cMXZlCZQTyiFHac755WQgu4ndEnyQzZt.jpg" class="card-img-top" alt="Team Member 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Jigyasha Acharya</h5>
-                            <p class="card-text">Head of Technology</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </section>
