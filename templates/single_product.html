@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block contents %}
+<div class="container text-center">
+    <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}} ({{product.price}})</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <a href="{% url 'productdetail' id=product.id %}" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{%  endblock %}

@@ -3,43 +3,47 @@
         
 {%  block content %}
 
-{% for home in Home %}
-<div id="carouselExampleIndicators" class="carousel slide">
-    
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ home.image.url }}" class="d-block w-100" alt="{{ home.name }}">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    
-</div>
-{% endfor %}
+    <div class="carousel-inner">
 
+    {% for home in Home %}
+        <div class="carousel-item {% if  forloop.counter == 1 %} active {% endif %}">
+        <img src="{{home.image.url}}" class="d-block w-100" alt="{{ home.name }}">
+        </div>
+    {% endfor %}
     
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 <div class="container text-center">
-    <div class="row align-items-center">
+    <h1>Products</h1>
+    <div class="row">
+        {% for prod in products %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="https://img.drz.lazcdn.com/static/np/p/f696342f37b65255a4797ce8f10c7e4d.jpg_400x400q80.jpg_.webp" class="card-img-top" alt="...">
+                <img src="{{ prod.image.url }}" class="card-img-top" alt="{{ prod.name}}">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+                    <h5 class="card-title">{{prod.name}} ({{prod.price}})</h5>
+                    <p class="card-text">{{ prod.description }}</p>
+                    <a href="product/product-detail/{{prod.id}}" class="btn btn-primary">Go somewhere</a>
                 </div>
+            </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
