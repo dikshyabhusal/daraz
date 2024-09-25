@@ -5,10 +5,7 @@ def home(request):
     data ={'title':"Daraz home page"}
     return render(request,"home.html",data)
     
-def contact(request):
-    data ={'title':"Daraz contact page"}
-    return render(request,"contact.html",data)
-    
+
 
 
 
