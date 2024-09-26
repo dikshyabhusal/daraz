@@ -1,0 +1,53 @@
+{% extends 'master.html' %}
+
+{% block contents %}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Add a New Product</h2>
+    
+            {% for message in messages %}
+                <li style="color:green;">{{ message }}</li>
+            {% endfor %}
+
+    <form method="POST" action="{% url 'store_products' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="category" class="form-label">Select Category</label>
+            <select name="category" class="form-select" id="category">
+                <option value="1">Men Category</option>
+                <option value="2">Female Category</option>
+                <option value="3">Electronics</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="product_image" class="form-label">Upload Product Image</label>
+            <input type="file" name="product_image" class="form-control" id="product_image">
+        </div>
+
+        <div class="mb-3">
+            <label for="product_name" class="form-label">Product Name</label>
+            <input type="text" name="product_name" class="form-control" id="product_name" placeholder="Enter product name">
+        </div>
+
+        <div class="mb-3">
+            <label for="product_price" class="form-label">Product Price</label>
+            <input type="number" name="product_price" class="form-control" id="product_price" placeholder="Enter product price">
+        </div>
+
+        <div class="mb-3">
+            <label for="product_discount" class="form-label">Product Discount (%)</label>
+            <input type="number" name="product_discount" class="form-control" id="product_discount" placeholder="Enter product discount">
+        </div>
+
+        <div class="mb-3">
+            <label for="product_description" class="form-label">Product Description</label>
+            <textarea name="product_description" class="form-control" id="product_description" rows="3" placeholder="Enter product description"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Product</button>
+    </form>
+</div>
+
+{% endblock %}
