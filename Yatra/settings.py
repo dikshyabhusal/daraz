@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'About',
     'Home',
     'Contact',
+    'crm',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'Yatra.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates','admin_panel/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
