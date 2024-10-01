@@ -1,6 +1,6 @@
 {% extends 'admin_panel/master.html'%}
 {% load static %}
-{% block content %}
+{% block contents %}
     <div class="container tm-mt-big tm-mb-big">
       <div class="row">
         <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
@@ -73,7 +73,6 @@
       </div>
     </div>
 
-
     <script src="{% static 'admin_panel/js/jquery-3.3.1.min.js' %}"></script>
     <!-- https://jquery.com/download/ -->
     <script src="{% static 'admin_panel//js/query-ui-datepicker/jquery-ui.min.js' %}"></script>
@@ -85,4 +84,6 @@
         $("#expire_date").datepicker();
       });
     </script>
-{% endblock %}
+
+    {% endblock %}
+

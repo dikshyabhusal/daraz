@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Category,Product
+from django .http import HttpResponse
+from django.contrib import messages
 
 # Create your views here.
 def admin_home(request):
@@ -16,7 +18,7 @@ def admin_product(request):
     return render(request, "admin_panel/products.html", data)
 
 def admin_add_category(request):
-    return render(request, "add_category.html")
+    return render(request, "admin_panel/add_category.html")
 
 def admin_add_category_validation(request):
     category_name = request.POST['c_name']
@@ -27,7 +29,8 @@ def admin_add_category_validation(request):
 
 def add_product(request):
     category_list = Category.objects.all()
-    return render(request, "admin_panel/admin_product/add_product", {"show_category":category_list} )
+    return render(request, "admin_panel/add_product.html", {"show_category":category_list} )
+    return redirect("add_product_add")
 
 def admin_add_product_validation(request):
     if request.POST:
@@ -40,11 +43,14 @@ def admin_add_product_validation(request):
         product_stock = request.POST['p_stock']
         
         Product.objects.create(name=product_name, price=product_price, discount=product_discount, image= product_image, description=product_description, category_id=product_category, stock=product_stock)
-
         messages.success(request, "Product added Successfully")
+        return redirect("add_product_add")
+    else:
+        return render(request, 'admin_panel/add_product.html')
 
+def admin_account(request):
+    return render(request, "admin_panel/accounts.html")
 
-        return redirect("add_product")
-
-    
+def  admin_login(request):
+    return render (request,"admin_panel/login.html")
 

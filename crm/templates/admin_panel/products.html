@@ -19,13 +19,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for item in Product %}
+                  {% for prod in Product %}
                   <tr>
                     <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">{{item.name}}</td>
-                    <td>{{item.price}}</td>
-                    <td>{{item.stock}}</td>
-                    <td>{{item.discount}}</td>
+                    <td class="tm-product-name">{{prod.name}}</td>
+                    <td>{{prod.price}}</td>
+                    <td>{{prod.stock}}</td>
+                    <td>{{prod.discount}}</td>
                     <td>
                       <a href="#" class="tm-product-delete-link">
                         <i class="far fa-trash-alt tm-product-delete-icon"></i>
@@ -38,7 +38,7 @@
             </div>
             <!-- table container -->
             <a
-              href="add_product.html"
+              href="{% url 'admin_add_product_validation' %}"
               class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
             <button class="btn btn-primary btn-block text-uppercase">
               Delete selected products
@@ -50,10 +50,10 @@
             <h2 class="tm-block-title">Product Categories</h2>
             <div class="tm-product-table-container">
               <table class="table tm-table-small tm-product-table">
-                {% for cate in categories %}
+                {% for categories in categories %}
                 <tbody>
                   <tr>
-                    <td class="tm-product-name">{{cate.name}}</td>
+                    <td class="tm-product-name">{{categories.name}}</td>
                     <td class="text-center">
                       <a href="#" class="tm-product-delete-link">
                         <i class="far fa-trash-alt tm-product-delete-icon"></i>
@@ -81,7 +81,7 @@
     <script>
       $(function() {
         $(".tm-product-name").on("click", function() {
-          window.location.href = "edit-product.html";
+          window.location.href = "admin_panel/edit-product.html";
         });
       });
     </script>
